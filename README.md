@@ -16,3 +16,29 @@ reference => https://nodejs.org/en/download/
  => Open up the Git Bash or Command Prompt and Bower is installed globally by running the following command.<br/>
    -> npm install -g bower
 
+# Topics :
+
+## 1) Dependency management tools - NPM, Bower <br/>
+## 2) AngularJs 1 <br/>
+ ### Core Features
+ Following are most important core features of AngularJS −
+
+  a) Data-binding − It is the automatic synchronization of data between model and view components.
+
+  b) Scope − These are objects that refer to the model. They act as a glue between controller and view.
+
+  c) Controller − These are JavaScript functions that are bound to a particular scope.
+
+  d) Services − AngularJS come with several built-in services for example $https: to make a XMLHttpRequests. These are singleton objects    which are instantiated only once in app.
+
+  e) Filters − These select a subset of items from an array and returns a new array.
+
+  f) Directives − Directives are markers on DOM elements (such as elements, attributes, css, and more). These can be used to create     custom HTML tags that serve as new, custom widgets. AngularJS has built-in directives (ngBind, ngModel...)
+
+  g) Templates − These are the rendered view with information from the controller and model. These can be a single file (like index.html)    or multiple views in one page using "partials".
+
+   h) Routing − It is concept of switching views.
+
+   i) Model View Whatever − MVC is a design pattern for dividing an application into different parts (called Model, View and Controller),     each with distinct responsibilities. AngularJS does not implement MVC in the traditional sense, but rather something closer to MVVM     (Model-View-ViewModel). The Angular JS team refers it humorously as Model View Whatever.
+
+## 3) Tasks Manager - Grunt, Gulp
