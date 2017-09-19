@@ -42,3 +42,11 @@ reference => https://nodejs.org/en/download/
    i) Model View Whatever − MVC is a design pattern for dividing an application into different parts (called Model, View and Controller),     each with distinct responsibilities. AngularJS does not implement MVC in the traditional sense, but rather something closer to MVVM     (Model-View-ViewModel). The Angular JS team refers it humorously as Model View Whatever.
 
 ## 3) Tasks Manager - Grunt, Gulp
+
+
+# Assignment No 1: 
+
+1) Create bower.json file on your project directory through bower
+2) Install angular js library by using bower
+3) Add angular library into your index file
+4) Add one input field into your html and show entered value inside any tag by using angular js
