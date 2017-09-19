@@ -1,0 +1,21 @@
+{
+  "name": "angularTraining",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Dipak"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6"
+  }
+}
