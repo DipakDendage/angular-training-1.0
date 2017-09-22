@@ -57,3 +57,11 @@ reference => https://nodejs.org/en/download/
 1) We can start angular application manually
 2) ng-controller , controller alise, controller scope, rootScope
 3) ng-repeat 
+
+# Assignment No 2:
+
+1) Create employees controller separate file and add it into index.html 
+2) Use $scope and $rootScope into your controller
+3) Create employees array of object with id,name, age and gender fields
+4) Use ng-repeat directive with search on only name field 
+5) Apply sorting on name, age and gender
