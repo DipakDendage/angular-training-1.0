@@ -10,29 +10,42 @@
     <!-- Optional Bootstrap theme -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 </head>
-<body>
+<body ng-app="myApp">
 <div class="panel">
-    <div class="panel-heading"><img src="images/angular-icon.png" height="40px" width=40px"/> <strong style="color: white;">Angular Application</strong></div>
-    <div class="panel-body">
-            <label>Enter First Name</label><input type="text" placeholder="Enter first Name" 
-            value="" id="firstName" onblur="showName()">
-            <br/>
-            <label>Show Fisrt Name</label> : <span id="showFirstName"></span>
+    <div class="panel-heading"><img src="images/angular-icon.png" height="40px"     width=40px"/> <strong style="color: white;">Angular Application</strong>
     </div>
-      <div class="panel-body" ng-app>
-            <label>Enter First Name</label><input type="text" placeholder="Enter first Name" 
-            ng-model="firstName">
-            <br/>
-            <label>Show Fisrt Name</label> : {{firstName}}
+    <div class="panel-body" ng-controller="employeesController as emp">
+        <div class="container">
+
+          <h2>{{emp.title}}</h2>     
+          <input type="text" ng-model="search" name="">     
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="employee in emp.employees |filter:search track by employee.id">
+                <td>{{employee.name}}</td>
+                <td>{{employee.age}}</td>
+                <td>{{employee.gender}}</td>
+                <td><button ng-click="emp.deleteEmployee($index)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
     </div>
+     
+    <div>Outside controller : {{title}}</div>
 </div>
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../bower_components/angular/angular.min.js"></script>
-<script type="text/javascript">
-    function showName(){
-        $("#showFirstName").text($("#firstName").val());
-    }
-</script>
+<script src="scripts/app.js"></script>
+<script src="scripts/employee/employees-controller.js"></script>
 </body>
 </html>

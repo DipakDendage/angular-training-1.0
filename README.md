@@ -50,3 +50,10 @@ reference => https://nodejs.org/en/download/
 2) Install angular js library by using bower
 3) Add angular library into your index file
 4) Add one input field into your html and show entered value inside any tag by using angular js
+
+
+## Second Session 
+
+1) We can start angular application manually
+2) ng-controller , controller alise, controller scope, rootScope
+3) ng-repeat 
