@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,44 +9,20 @@
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Optional Bootstrap theme -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-</head>
-<body ng-app="myApp">
-<div class="panel">
-    <div class="panel-heading"><img src="images/angular-icon.png" height="40px"     width=40px"/> <strong style="color: white;">Angular Application</strong>
-    </div>
-    <div class="panel-body" ng-controller="employeesController as emp">
-        <div class="container">
 
-          <h2>{{emp.title}}</h2> 
-          <input type="text" ng-model="search">
-              
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="employee in emp.employees |filter:search track by employee.id">
-                <td>{{employee.name}}</td>
-                <td>{{employee.age}}</td>
-                <td>{{employee.gender}}</td>
-                <td><button ng-click="emp.deleteEmployee($index)">Delete</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-    </div>
-     
-    <div>Outside controller : {{title}}</div>
-</div>
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../bower_components/angular/angular.min.js"></script>
-<script src="scripts/app.js"></script>
-<script src="scripts/employee/employees-controller.js"></script>
+    <script src="https://use.fontawesome.com/913a009432.js"></script>
+
+</head>
+<body>
+    <!-- Angular routing start from here -->
+    <div ng-include="'views/common/layout.html'"></div>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.router.js"></script>
+    <script src="scripts/employee/employees-controller.js"></script>
+    <script src="scripts/employee/employee-controller.js"></script>
 </body>
 </html>

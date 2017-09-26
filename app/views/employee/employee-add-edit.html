@@ -1,0 +1,25 @@
+<div class="container" ng-controller="employeeController as emp">
+
+  <h2>{{$state.current.data.title}}</h2> 
+  <form ng-submit="emp.saveEmployee()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name" ng-model="emp.employee.name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputage">Age</label>
+    <input type="number" class="form-control" id="exampleInputage" aria-describedby="emailHelp" placeholder="Enter age" ng-model="emp.employee.age">
+  </div>
+  <div class="form-group">
+    <label for="exampleSelect1">Select gender</label>
+<!--     <select>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select> -->
+    <select class="form-control" id="exampleSelect1" ng-model="emp.employee.gender" ng-options="val.gender as val.gender for val in emp.genders"></select>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="button" class="btn btn-secondary" ng-click="emp.cancel()">Cancel</button>
+</form>
+</div>

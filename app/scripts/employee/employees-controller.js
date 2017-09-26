@@ -1,8 +1,10 @@
 
-function employeesController($scope, $rootScope) {
+function employeesController($scope, $rootScope,$state) {
 
 	var vm = this;
 	vm.title = "Employees List";
+
+	console.log($state.current.data.title);
 
 	vm.employees = [
 	    {id:1,name:'John', age:25, gender:'boy'},
@@ -19,6 +21,14 @@ function employeesController($scope, $rootScope) {
 
   	vm.deleteEmployee = function(index){
   			vm.employees.splice(index,1);
+  	}
+
+  	vm.addNew = function(obj){
+  		if(obj && obj.id){
+  			$state.go('employee', {id: obj.id})
+  		} else{
+  			$state.go('employee/add')
+  		}
   	}
 }
 

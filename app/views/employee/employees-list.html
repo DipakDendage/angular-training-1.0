@@ -1,0 +1,32 @@
+<div class="container">
+
+  <h2>{{$state.current.data.title}}</h2> 
+  <div class="mb-20">
+    <a href="" ng-click="emp.addNew()"><i class="fa fa-plus-circle add-new" aria-hidden="true" title="Add new"></i></a>
+    <input type="text" class="float-right" placeholder="Search here.." ng-model="search">
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="employee in emp.employees |filter:search track by employee.id">
+        <td>{{employee.name}}</td>
+        <td>{{employee.age}}</td>
+        <td>{{employee.gender}}</td>
+        <td>
+          <div>
+            <a href="" ng-click="emp.deleteEmployee($index,employee)"  title="Delete"><i class="fa fa-trash-o btn-group" aria-hidden="true"></i></a>
+
+            <a href="" ng-click="emp.addNew(employee)"  title="Edit"><i class="fa fa-pencil btn-group" aria-hidden="true"></i></a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -9,3 +9,19 @@
 .odd{
 	background: #faebd7;
 }
+
+.mb-20{
+	margin-bottom: 20px; 
+}
+
+.float-right{
+	float: right;
+}
+
+.add-new{
+	color: #3c763d;
+	font-size: 38px !important;
+}
+.btn-group{
+    margin: 0px 10px;
+}
