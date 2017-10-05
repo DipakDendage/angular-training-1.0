@@ -1,26 +1,29 @@
 
-function employeesController($scope, $rootScope,$state) {
+function employeesController($scope, $rootScope,$state, empService) {
 
 	var vm = this;
 	vm.title = "Employees List";
 
 	console.log($state.current.data.title);
 
-	vm.employees = [
-	    {id:1,name:'John', age:25, gender:'boy'},
-	    {id:2,name:'Jessie', age:30, gender:'girl'},
-	    {id:3,name:'Johanna', age:28, gender:'girl'},
-	    {id:4,name:'Joy', age:15, gender:'girl'},
-	    {id:5,name:'Mary', age:28, gender:'girl'},
-	    {id:6,name:'Peter', age:95, gender:'boy'},
-	    {id:7,name:'Sebastian', age:50, gender:'boy'},
-	    {id:8,name:'Erika', age:27, gender:'girl'},
-	    {id:9,name:'Patrick', age:40, gender:'boy'},
-	    {id:10,name:'Samantha', age:60, gender:'girl'}
-  	];
+	var success = function(response){
+		vm.employees = response.data;
+	};
 
-  	vm.deleteEmployee = function(index){
-  			vm.employees.splice(index,1);
+
+	var deletedRecord = function(response){
+		empService.getEmployees().then(success, error)
+	};
+
+	var error = function(response){
+		console.log("in error");
+		console.log(response)
+	};
+
+	empService.getEmployees().then(success, error);
+	
+  	vm.deleteEmployee = function(id){
+  		empService.deleteEmployee(id).then(deletedRecord, error);
   	}
 
   	vm.addNew = function(obj){
